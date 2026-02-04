@@ -1,34 +1,36 @@
 # Architecture Strategy – Project Chimera
 
-## 1. Agent Pattern
+## Agent Pattern
 
-Chosen Pattern: Hierarchical Swarm Architecture
+Chosen Pattern: Hierarchical Swarm
 
-Structure:
+Agents:
 
-- Planner Agent
-- Worker Agents
-- Judge Agents
+- Planner
+- Worker
+- Judge
 
-Reasons:
+Reason:
+Supports scalability, parallel work, and quality control.
 
-- Supports massive parallelism
-- Easy error isolation
-- Built-in quality control
-- Matches Chimera SRS
+---
 
-## 2. Human-in-the-Loop (Safety Layer)
+## Human-in-the-Loop (Safety Layer)
 
-Humans review content only when:
+Humans review only risky outputs.
 
-- confidence_score < 0.8
-- Sensitive topics detected
-- High-value payments requested
+Triggers:
+
+- Confidence < 0.8
+- Sensitive topics
+- High payments
 
 Flow:
-Worker → Judge → Human (if needed)
+Worker → Judge → Human
 
-## 3. Database Strategy
+---
+
+## Database Strategy
 
 PostgreSQL:
 
@@ -39,18 +41,18 @@ PostgreSQL:
 NoSQL (MongoDB/DynamoDB):
 
 - Video metadata
-- Media generation logs
 
 Weaviate:
 
-- Agent memories
+- Agent memory
 
 Redis:
 
-- Queues
-- Short-term memory
+- Cache and queues
 
-## 4. High-Level Architecture Diagram
+---
+
+## Architecture Diagram
 
 ```mermaid
 graph TD
