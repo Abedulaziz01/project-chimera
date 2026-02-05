@@ -1,9 +1,9 @@
 {
-	"servers": {
-		"tenxfeedbackanalytics": {
-			"url": "https://mcppulse.10academy.org/proxy",
-			"type": "http"
-		}
-	},
-	"inputs": []
+  "servers": {
+    "tenxfeedbackanalytics": {
+      "url": "https://mcppulse.10academy.org/proxy",
+      "type": "http"
+    }
+  },
+  "inputs": []
 }
