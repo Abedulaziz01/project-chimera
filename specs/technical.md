@@ -1,6 +1,24 @@
-# Technical Specification
+# Technical Specifications
 
-## Agent API Contracts
+## System Architecture
+
+High-level components:
+
+- Orchestrator Agent
+- Skill Layer
+- MCP Servers
+- Database
+- External APIs (social platforms)
+
+Architecture Flow:
+
+Agent → Skill → MCP / External API → Database
+
+(Architecture diagram to be added later)
+
+---
+
+## API Contracts
 
 ### Fetch Trends
 
@@ -55,11 +73,14 @@ Output:
 
 ## Database Schema
 
-Table: posts
+### Table: trends
 
-- id (uuid)
-- platform (text)
-- topic (text)
-- content (text)
-- url (text)
-- created_at (timestamp)
+```sql
+CREATE TABLE trends (
+    id UUID PRIMARY KEY,
+    topic VARCHAR(255) NOT NULL,
+    platform VARCHAR(50) NOT NULL,
+    volume INTEGER,
+    discovered_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+```
