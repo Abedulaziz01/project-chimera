@@ -18,6 +18,7 @@ def test_trend_fetcher_contract():
     assert "trends" in result
     assert "timestamp" in result
 
+
     assert isinstance(result["platform"], str)
     assert isinstance(result["trends"], list)
     assert isinstance(result["timestamp"], str)
