@@ -1,0 +1,9 @@
+reviews:
+  profile: strict
+
+  rules:
+    - name: Spec Alignment
+      description: Ensure code follows technical.md
+
+    - name: Security
+      description: Detect secrets and unsafe patterns
